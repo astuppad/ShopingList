@@ -1,0 +1,27 @@
+<table class="table table-borderless table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Item Name</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of shoppingcart">
+      <td scope="row">{{item.Number}}</td>
+      <td>{{item.Name}}</td>
+      <td>{{item.Quantity}}</td>
+      <td>{{item.Price * item.Quantity}}</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Total</td>
+      <td></td>
+      <td></td>
+      <td>{{total}}</td>
+    </tr>
+  </tbody>
+</table>
+<app-shopping-list (addtocart)="AddtoCart($event)"></app-shopping-list>
